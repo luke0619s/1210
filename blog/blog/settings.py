@@ -28,7 +28,7 @@ DEBUG = True
 if 'DYNO' in os.environ:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
