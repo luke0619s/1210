@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>{% block title %}{% endblock %}</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">    
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>	
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body class='bg-dark container'>
+	<h1 style="text-align:center" class="text-white">登革熱病媒蚊監測網</h1>
+	<!--Header-->
+   	<nav class='nav nav-tabs nav-justified justify-content-center' style="margin-top:30px;">
+   		<li class="nav-item btn-primary">
+   			<a class="nav-link text-white" href="{% url 'main:main' %}">首頁</a>
+   		</li>
+   		<li class="nav-item btn-primary">
+   			<a class="nav-link text-white" href="{% url 'main:station' %}">即時監測</a>
+   		</li>
+   		<li class="nav-item btn-primary">
+   			<a class="nav-link text-white" href="{% url 'main:sort' %}">歷史資料</a>
+   		</li>
+   		<li class="nav-item btn-primary">
+   			<a class="nav-link text-white" href="{% url 'main:main' %}">網站介紹</a>
+   		</li>
+   	</nav>
+	<br>
+	<!--Content-->
+    <div>
+    	<div class="jumbotron bg-primary">
+    		{% block content %}{% endblock %}
+       </div>
+    </div>
+    <!--Footer-->
+        <div class="bg-primary text-white" >
+            <footer class='d-flex justify-content-around'>
+                <div class='container'>
+                    <div class="row">
+                        <div class="col-4">
+                            <h3>網站資訊</h3>
+                            <ul>
+                                <li>關於遠距離教學</li>
+                                <li>網站公告</li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h3>社群平台</h3>
+                            <ul>
+                                <li>Facebook</li>
+                                <li>Instagram</li>
+                                <li>Youtube</li>
+                            </ul>
+                        </div>
+                        <div class="col-4">
+                            <h3>校園連結</h3>
+                            <ul>
+                                <li>輔仁大學資訊管理學系</li>
+                                <li>學生資訊網</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <footer class='d-flex justify-content-around'>
+                <div class="row">
+                    <div class="col-12">
+                        <p> <a href="#">網站地圖|</a><a href="#">使用條款與須知|</a><a href="#">聯絡我們|</a>
+                            &copy; 2020 輔仁大學資訊管理學系&middot;<a href="#">隱私權政策</a>&middot;<a href="#">服務條款</a>
+                            <a href="index.php"><input type="button" class="btn-primary " value="回上面"></a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+</body>
+</html>
