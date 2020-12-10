@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wws2fhobccppkgl05#fko1h#5x)njacw9dvmyb-1esi-^t-k%0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 if 'DYNO' in os.environ:
     DEBUG = False
 
