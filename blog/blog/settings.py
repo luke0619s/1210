@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 if DEBUG:
     DATABASES = {
         'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'googlemaps_test',
+        'USER': 'root',
+        'PASSWORD': 'mysql',
+        'HOST': 'localhost',
+        'PORT': '3306',
         }
     }
 else:
