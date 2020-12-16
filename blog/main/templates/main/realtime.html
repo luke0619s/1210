@@ -1,0 +1,53 @@
+{% extends 'main/base.html' %}
+{% block title %}登革熱病媒蚊監測網-即時監測{% endblock %}
+{% block content %}
+    <div class="text-white">
+    <div class="row">
+    	<div class="col-12">
+    	<center>
+    	<div class='text-dark' id="luke4">
+    	<label class='text-dark'>城市:</label>
+    	<select>
+    	<option>請選擇城市:</option>
+    	<option>臺北</option>
+    	<option>新北</option>
+    	<option>臺中</option>
+   	 	<option>高雄</option>
+    	<option>臺南</option>
+    	<option>屏東</option>
+		</select>
+    	<label class='text-dark'>地區:</label>
+    	<select>
+    	<option>請選擇地區</option>
+    	<option>南港</option>
+    	<option>中山</option>
+    	<option>信義</option>
+   	 	<option>木柵</option>
+    	<option>中正</option>
+    	<option>大安</option>
+		</select>
+    	<label class='text-dark'>觀測站:</label>
+    	<select>
+    	<option>請選擇觀測站</option>
+    	<option>測站1</option>
+    	<option>測站2</option>
+    	<option>測站3</option>
+   	 	<option>測站4</option>
+    	<option>測站5</option>
+    	<option>測站6</option>
+		</select>
+    	<input type="submit" name="station" class='btn-primary'>
+    	</div>
+    			</center>
+    	   	</div>
+    
+    				{%　load static %}
+    					<div class="panel-body">
+    					<center>
+    						<a href="{% url 'main:station' %}"><img  width="85%" src="{% static 'main/img/TEST.png' %}"></a>
+    					</center>
+    					</div>
+    			</div>	
+    </div>
+    <hr>
+{% endblock %}

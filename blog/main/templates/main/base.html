@@ -13,36 +13,133 @@
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+		body{
+			background: url("/static/main/img/back.png") fixed;
+		}
+		#luke{
+			background: url("/static/main/img/back.png");
+		}
+		#luke2{
+			font-size: 24px;
+		}
+		#luke3{
+			font-size: 17px;
+		}
+		#icon3{
+			background: url("/static/main/img/icon3.png");
+		}
+		#icon2{
+			background: url("/static/main/img/2.png");
+		}
+		#luke4{
+			font-size: 30px;
+		}
+		
+		
+		.container {
+  padding: 75px 0;
+  margin: 0 auto;
+  width: 1140px;
+}
+
+h1 {
+  position: relative;
+  margin-bottom: 45px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 44px;
+  text-transform: uppercase;
+  color: #424242;
+}
+
+.gallery-wrap {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 70vh;
+}
+
+.item {
+  flex: 1;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  transition: flex 0.5s ease;
+}
+.item:hover {
+  flex: 7;
+}
+
+.item-1 {
+
+  background-image: url("/static/main/img/news2.jpg");
+}
+
+.item-2 {
+  background-image:  url("/static/main/img/即時監測.jpg");
+}
+.item-3 {
+  background-image:  url("/static/main/img/歷史資料.jpg");
+}
+
+.item-4 {
+  background-image:  url("/static/main/img/網站介紹.jpg");
+}
+
+
+
+.social {
+  position: absolute;
+  right: 35px;
+  bottom: 0;
+}
+.social img {
+  display: block;
+  width: 32px;
+}
+	</style>
 </head>
-<body class='bg-dark container'>
-	<h1 style="text-align:center" class="text-white">登革熱病媒蚊監測網</h1>
-	<!--Header-->
-   	<nav class='nav nav-tabs nav-justified justify-content-center' style="margin-top:30px;">
-   		<li class="nav-item btn-primary">
-   			<a class="nav-link text-white" href="{% url 'main:main' %}">首頁</a>
-   		</li>
-   		<li class="nav-item btn-primary">
-   			<a class="nav-link text-white" href="{% url 'main:station' %}">即時監測</a>
-   		</li>
-   		<li class="nav-item btn-primary">
-   			<a class="nav-link text-white" href="{% url 'main:sort' %}">歷史資料</a>
-   		</li>
-   		<li class="nav-item btn-primary">
-   			<a class="nav-link text-white" href="{% url 'main:main' %}">網站介紹</a>
-   		</li>
-   	</nav>
-	<br>
-	<!--Content-->
-    <div>
-    	<div class="jumbotron bg-primary">
-    		{% block content %}{% endblock %}
-       </div>
-    </div>
+<body>
+<div style="font-family:DFKai-sb; ">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    	<div id="navbar" class="navbar-collapse collapse bg-dark">
+    		<div class="nav-header">
+    		<a class="navbar-brand text-white">登革熱病媒蚊監測網站</a>
+    	</div>
+    		<form class="navbar-form navbar-right">
+    			<button type="submit" class="btn btn-success"><a href="{% url 'main:setting' %}" class="text-white">luke會員您好!</a></button>
+    			<button type="submit" class="btn btn-success"><a href="{% url 'main:setting' %}" class="text-white">升級會員</a></button>
+    			<button type="submit" class="btn btn-success"><a href="{% url 'main:setting' %}" class="text-white">會員設定</a></button>
+    			<button type="submit" class="btn btn-success"><a href="{% url 'main:setting' %}" class="text-white">登出</a></button>
+    		</form>
+    	</div>
+    </nav>
+    	<nav class='nav nav-tabs nav-justified justify-content-center'style="padding-top:50px" id="luke2">
+   			<li class="nav-item btn-primary">
+   				<a class="nav-link text-white" href="{% url 'main:main' %}">首頁</a>
+   			</li>
+   			<li class="nav-item btn-primary">
+   				<a class="nav-link text-white" href="{% url 'main:realtime' %}">意見箱</a>
+   			</li>
+   			<li class="nav-item btn-primary">
+   				<a class="nav-link text-white" href="{% url 'main:sort' %}">常見問答</a>
+   			</li>
+   			<li class="nav-item btn-primary">
+   				<a class="nav-link text-white" href="{% url 'main:sign' %}">註冊</a>
+   			</li>
+   		</nav>
+   		<br>
+   		<!--Content-->
+    {% block content %} 		
+    {% endblock %}
+</div>
     <!--Footer-->
-        <div class="bg-primary text-white" >
+        <div class="text-white bg-primary">
             <footer class='d-flex justify-content-around'>
-                <div class='container'>
-                    <div class="row">
+                <div class='container-fluid'>
+                    <div class="row" id="luke3">
                         <div class="col-4">
                             <h3>網站資訊</h3>
                             <ul>
@@ -71,9 +168,9 @@
             <footer class='d-flex justify-content-around'>
                 <div class="row">
                     <div class="col-12">
-                        <p> <a href="#">網站地圖|</a><a href="#">使用條款與須知|</a><a href="#">聯絡我們|</a>
-                            &copy; 2020 輔仁大學資訊管理學系&middot;<a href="#">隱私權政策</a>&middot;<a href="#">服務條款</a>
-                            <a href="index.php"><input type="button" class="btn-primary " value="回上面"></a></p>
+                        <p> <a href="#" class="text-white">網站地圖|</a><a href="#" class="text-white">使用條款與須知|</a><a class="text-white" href="#">聯絡我們|</a>
+                            &copy; 2020 輔仁大學資訊管理學系&middot;<a class="text-white" href="#">隱私權政策</a>&middot;<a href="#" class="text-white">服務條款</a>
+                            <a class="text-white" href="index.php"><input type="button" class="btn-primary " value="回上面"></a></p>
                     </div>
                 </div>
             </footer>

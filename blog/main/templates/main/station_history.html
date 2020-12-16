@@ -1,0 +1,58 @@
+{% extends 'main/base.html' %}
+{% block title %}登革熱病媒蚊監測網-監測站-歷史數據{% endblock %}
+{% block content %}
+<h2 class="text-white">2019/11/52週 監測歷史數據圖表</h2>
+<div class="row">
+    	<div class="col-12">
+    	<center>
+    	<div class='text-dark'>
+    	<label class='text-white'>年:</label>
+    	<select>
+    	<option>請選擇年:</option>
+    	<option>2019</option>
+		</select>
+    	<label class='text-white'>月:</label>
+    	<select>
+    	<option>請選擇月</option>
+    	<option>12</option>
+		</select>
+    	<label class='text-white'>週:</label>
+    	<select>
+    	<option>請選擇週</option>
+    	<option>1</option>
+		</select>
+    	<input type="submit" name="station" class='btn-primary'>
+    	</div>
+<div class="row text-white">
+	<div class="col-4">
+		{%　load static %}
+		<div><h3>O3</h3></div>
+    	<img src="{% static 'main/img/data1.png' %}" width=100%>
+	</div>
+	<div class="col-4">
+		<div><h3>CO</h3></div>
+		<img src="{% static 'main/img/data2.png' %}" width=100%>
+	</div>
+	<div class="col-4">
+		<div><h3>溫度</h3></div>
+		<img src="{% static 'main/img/data3.png' %}" width=100%>
+	</div>
+</div>
+<hr>
+<div class="row text-white">
+	<div class="col-4">
+		{%　load static %}
+		<div><h3>Co2</h3></div>
+    	<img src="{% static 'main/img/data4.png' %}" width=100%>
+	</div>
+	<div class="col-4">
+		<div><h3>SO2</h3></div>
+		<img src="{% static 'main/img/data5.png' %}" width=100%>
+	</div>
+	<div class="col-4">
+		<div><h3>PM2.5</h3></div>
+		<img src="{% static 'main/img/data6.png' %}" width=100%>
+	</div>
+</div>
+<hr>
+{% endblock %}

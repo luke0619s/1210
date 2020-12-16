@@ -1,87 +1,21 @@
 {% extends 'main/base.html' %}
 {% block title %}登革熱病媒蚊監測網-首頁{% endblock %}
 {% block content %}
-	<div class="row">
-    	<div class="col-12">
-    	<center>
-    	<h2 class='text-white'>登革熱監測網</h2>
-    	<div class='text-dark'>
-    	<label class='text-white'>城市:</label>
-    	<select>
-    	<option>請選擇城市:</option>
-    	<option>Dog</option>
-    	<option>Cat</option>
-    	<option>Hamster</option>
-   	 	<option>Parrot</option>
-    	<option>Spider</option>
-    	<option>Goldfish</option>
-		</select>
-    	<label class='text-white'>地區:</label>
-    	<select>
-    	<option>請選擇地區</option>
-    	<option>Dog</option>
-    	<option>Cat</option>
-    	<option>Hamster</option>
-   	 	<option>Parrot</option>
-    	<option>Spider</option>
-    	<option>Goldfish</option>
-		</select>
-    	<label class='text-white'>觀測站:</label>
-    	<select>
-    	<option>請選擇觀測站</option>
-    	<option>Dog</option>
-    	<option>Cat</option>
-    	<option>Hamster</option>
-   	 	<option>Parrot</option>
-    	<option>Spider</option>
-    	<option>Goldfish</option>
-		</select>
-    	<input type="submit" name="station" class='btn-primary'>
-    	</div>
-    			</center>
-    	<br>
-    			<div class="panel bg-secondary text-white">
-    					<div class="panel-heading panel-success bg-info">
-    						<p>登革熱監測地圖</p>
-    					</div>
-    					<div class="panel-body bg-info">
-    							{%　load static %}
-    						<img src="{% static 'main/img/maps.PNG' %}" width=100%>
-    					</div>
-    			</div>	
-    	</div>
-    </div>
-    <hr>
-    <div class="row d-flex justify-content-around">
-    	<div class="col-3">
-    				<div class="panel panel-success">
-    					<div class="panel-heading">
-    					<p>歷史資料</p>
-    					</div>
-    					<div class="panel-body">
-    					<img src="{% static 'main/img/history_record.jpg' %}" width=100%>
-    					</div>
-    				</div>	
-    	</div>
-    	<div class="col-3">
-    				<div class="panel panel-info">
-    					<div class="panel-heading">
-    					<p>粉絲團</p>
-    					</div>
-    					<div class="panel-body">
-    					<img src="{% static 'main/img/fans.png' %}" width=100%>
-    					</div>
-    				</div>	
-    	</div>
-    	<div class="col-3">
-    				<div class="panel panel-danger">
-    					<div class="panel-heading">
-    					<p>我們位址</p>
-    					</div>
-    					<div class="panel-body">
-    					<img src="{% static 'main/img/address.JPG.png' %}" width=100%>
-    					</div>
-    				</div>	
-    	</div>
-    </div>	
+	{% load static %}
+	
+	<div class="container">
+  	<h1 class="text-white">登革熱病媒蚊監測網</h1>
+  		<div class="gallery-wrap">
+   			<a class="item item-1" href="{% url 'main:main' %}"></a>
+    		<a class="item item-2" href="{% url 'main:realtime' %}"></a>
+    		<a class="item item-3" href="{% url 'main:sort' %}"></a>
+    		<a class="item item-4" href="{% url 'main:main' %}"></a>
+  		</div>
+	</div>
+	<div class="jumbotron" id="luke">
+		<div class="container text-white">
+			<p id="luke4">本作品名稱為登革熱病媒蚊偵測系統。登革熱在2014年.2015年在臺灣造成了15492例及43419例的確診病例後，我們不得不再次面對這嚴峻的全球議題。與新冠肺炎一樣皆為傳染病，不同的是至今為止，登革熱仍沒有特效藥物可治療，僅能依靠支持性療法。因此在藥物尚未問世前，登革熱的預防顯得格外重要，除了加強宣導「巡、倒、清、刷」的觀念及徹底落實積水容器清除以杜絕形成孳生源…等之外，透過軟硬體應用對登革熱病媒蚊進行監測、分析，在登革熱預防上能發揮出莫大的防疫成效。
+			</p>
+		</div>
+	</div>
 {% endblock %}
