@@ -35,6 +35,9 @@
 		#luke4{
 			font-size: 30px;
 		}
+		#luke6{
+			list-style-type:none;
+		}
 		
 		
 .container {
@@ -56,7 +59,7 @@ h1 {
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 70vh;
+  height: 81vh;
 }
 
 .item {
@@ -136,20 +139,21 @@ h1 {
     {% endblock %}
 </div>
     <!--Footer-->
+    <center>
         <div class="text-white bg-primary">
             <footer class='d-flex justify-content-around'>
                 <div class='container-fluid'>
                     <div class="row" id="luke3">
                         <div class="col-4">
                             <h3>網站資訊</h3>
-                            <ul>
+                            <ul id="luke6">
                                 <li>關於遠距離教學</li>
                                 <li>網站公告</li>
                             </ul>
                         </div>
                         <div class="col-4">
                             <h3>社群平台</h3>
-                            <ul>
+                            <ul id="luke6">
                                 <li>Facebook</li>
                                 <li>Instagram</li>
                                 <li>Youtube</li>
@@ -157,7 +161,7 @@ h1 {
                         </div>
                         <div class="col-4">
                             <h3>校園連結</h3>
-                            <ul>
+                            <ul id="luke6">
                                 <li>輔仁大學資訊管理學系</li>
                                 <li>學生資訊網</li>
                             </ul>
@@ -175,5 +179,6 @@ h1 {
                 </div>
             </footer>
         </div>
+        </center>
 </body>
 </html>
