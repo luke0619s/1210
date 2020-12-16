@@ -2,6 +2,7 @@
 {% block title %}登革熱病媒蚊監測網-即時監測{% endblock %}
 {% block content %}
     <div class="text-white">
+     	{%　load static %}
     <div class="row">
     	<div class="col-12">
     	<center>
@@ -40,13 +41,12 @@
     	</div>
     			</center>
     	   	</div>
-    	{%　load static %}
     	<div class="panel-body">
     	<center>
-    	<a href="{% url 'main:station' %}"><img  width="85%" src="{% static 'main/img/5.png' %}"></a>
+    	<a href="{% url 'main:station' %}"><img  width="85%" src="{% static 'main/img/luke.png' %}" class="img-rounded"></a>
     	</center>
     	</div>
-    			</div>	
+    	</div>	
     </div>
     <hr>
 {% endblock %}
