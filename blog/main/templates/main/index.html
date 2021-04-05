@@ -2,7 +2,6 @@
 {% block title %}登革熱病媒蚊監測網-首頁{% endblock %}
 {% block content %}
 	{% load static %}
-	
 	<div class="container">
   	<h1 class="text-dark">登革熱病媒蚊監測網</h1>
   		<div class="gallery-wrap">
@@ -18,4 +17,31 @@
 			</p>
 		</div>
 	</div>
+	<script>
+	var mysql  = require('mysql')
+	var connection = mysql.createConnection({     
+	  host     : 'localhost',       
+	  user     : 'root',              
+	  password : 'mysql',       
+	  port: '3306',                   
+	  database: 'googlemaps_test' 
+	}); 
+	 
+	connection.connect();
+	 
+	var  sql = 'SELECT * FROM M';
+	//查
+	connection.query(sql,function (err, result) {
+	        if(err){
+	          console.log('[SELECT ERROR] - ',err.message);
+	          return;
+	        }
+	 
+	       console.log('--------------------------SELECT----------------------------');
+	       console.log(result);
+	       console.log('------------------------------------------------------------\n\n');  
+	});
+	 
+	connection.end();
+	</script>
 {% endblock %}
